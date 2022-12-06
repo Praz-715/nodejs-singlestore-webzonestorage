@@ -2,7 +2,7 @@
 
 Aplikasi CRUD dengan tipe data BLOB pada SingleStore (Database SQL) menggunakan NodeJS sebagai server
 
-## RreRequirement
+## Getting Started
 
 
 1. NodeJS Engine version 14 or latest
@@ -12,7 +12,22 @@ or
 
 ## Installation
 
-1. Use NodeJS engine
+1. Create table in database singlestore(SQL)
+
+```sql
+create table if not exists files(
+  file_id bigint NOT NULL AUTO_INCREMENT,
+  file_name varchar(255),
+  file_type varchar(255),
+  file_size bigint,
+  file longblob,
+  create_at timestamp default current_timestamp(),
+  PRIMARY KEY ( file_id )
+  );
+```
+
+
+2. Use NodeJS engine
 
 ```bash
 git clone https://github.com/Praz-715/nodejs-singlestore-webzonestorage
@@ -26,7 +41,7 @@ npm run start
 
 **Note:** edit variable database in router.js
 
-2. Use Docker Engine
+3. Use Docker Engine
 
 ```bash
 git clone https://github.com/Praz-715/nodejs-singlestore-webzonestorage
